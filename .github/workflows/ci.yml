@@ -1,0 +1,30 @@
+name: StockSense verification
+on: [push, pull_request]
+env:
+  OMP_NUM_THREADS: '2'
+jobs:
+  science:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12', cache: pip}
+      - run: pip install -r requirements.txt
+      - run: python -m stocksense.fetch_data && python -m stocksense.pipeline
+      - run: python -m pytest -q tests/test_science.py
+      - uses: actions/upload-artifact@v4
+        with: {name: measured-forecast-evidence, path: docs/metrics.json}
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22', cache: npm}
+      - run: npm ci && npm run build && npx playwright install --with-deps chromium
+      - run: |
+          npm run preview > /tmp/stocksense-web.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:5180 > /dev/null && break; sleep 1; done
+      - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: dashboard-evidence, path: 'docs/*.png'}

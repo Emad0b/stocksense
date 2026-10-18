@@ -1,0 +1,256 @@
+{
+  "source": {
+    "url": "https://raw.githubusercontent.com/Nixtla/transfer-learning-time-series/45e749a7e6a513dd843dbdf82181b1e27bbaf232/datasets/m5_sales_exog_small.csv",
+    "sha256": "c0d257cffbe17aa56863ba8a936b91abf5fc4c243a99d0861013139131833d21",
+    "rows": 15752,
+    "retrieved": "2026-10-18",
+    "name": "M5 \u00b7 Nixtla public sample",
+    "series": 8,
+    "days_per_series": 1969,
+    "start": "2011-01-29",
+    "end": "2016-06-19",
+    "observations": 15752
+  },
+  "protocol": {
+    "horizon": 28,
+    "selection_origins": [
+      "2016-02-01",
+      "2016-02-29",
+      "2016-03-28"
+    ],
+    "calibration_origin": "2016-04-25",
+    "test_origin": "2016-05-23",
+    "coverage_target": 0.9,
+    "model_training_days": 730,
+    "bootstrap_samples": 500,
+    "bootstrap_block_days": 7
+  },
+  "leaderboard": [
+    {
+      "id": "seasonal_naive",
+      "label": "Seasonal naive",
+      "wape": 1.057591623036649,
+      "mae": 1.8035714285714284,
+      "coverage": 0.9151785714285714,
+      "bias": -0.6339285714285714
+    },
+    {
+      "id": "trailing_mean",
+      "label": "28-day mean",
+      "wape": 0.800486163051608,
+      "mae": 1.3651147959183674,
+      "coverage": 0.9196428571428572,
+      "bias": -0.3571428571428573
+    },
+    {
+      "id": "gradient_boosting",
+      "label": "Gradient boosting",
+      "wape": 0.7819478061820508,
+      "mae": 1.333500276614033,
+      "coverage": 0.8794642857142857,
+      "bias": -0.40330840651676636
+    },
+    {
+      "id": "selected",
+      "label": "Selected per SKU",
+      "wape": 0.8087931289278428,
+      "mae": 1.379281139510875,
+      "coverage": 0.9107142857142857,
+      "bias": -0.35653793845198256
+    }
+  ],
+  "inventory_default": [
+    {
+      "sku": "FOODS_1_001",
+      "model": "seasonal_naive",
+      "stock": 25,
+      "realized_demand": 44.0,
+      "realized_cost": 95.0,
+      "forecast_only_cost": 200.0
+    },
+    {
+      "sku": "FOODS_1_001",
+      "model": "trailing_mean",
+      "stock": 28,
+      "realized_demand": 44.0,
+      "realized_cost": 80.0,
+      "forecast_only_cost": 104.99999999999997
+    },
+    {
+      "sku": "FOODS_1_001",
+      "model": "gradient_boosting",
+      "stock": 35,
+      "realized_demand": 44.0,
+      "realized_cost": 45.0,
+      "forecast_only_cost": 91.85531830974453
+    },
+    {
+      "sku": "FOODS_1_002",
+      "model": "seasonal_naive",
+      "stock": 43,
+      "realized_demand": 30.0,
+      "realized_cost": 13.0,
+      "forecast_only_cost": 10.0
+    },
+    {
+      "sku": "FOODS_1_002",
+      "model": "trailing_mean",
+      "stock": 32,
+      "realized_demand": 30.0,
+      "realized_cost": 2.0,
+      "forecast_only_cost": 49.999999999999986
+    },
+    {
+      "sku": "FOODS_1_002",
+      "model": "gradient_boosting",
+      "stock": 28,
+      "realized_demand": 30.0,
+      "realized_cost": 10.0,
+      "forecast_only_cost": 65.67514733218994
+    },
+    {
+      "sku": "FOODS_1_003",
+      "model": "seasonal_naive",
+      "stock": 31,
+      "realized_demand": 13.0,
+      "realized_cost": 18.0,
+      "forecast_only_cost": 7.0
+    },
+    {
+      "sku": "FOODS_1_003",
+      "model": "trailing_mean",
+      "stock": 20,
+      "realized_demand": 13.0,
+      "realized_cost": 7.0,
+      "forecast_only_cost": 7.0000000000000036
+    },
+    {
+      "sku": "FOODS_1_003",
+      "model": "gradient_boosting",
+      "stock": 24,
+      "realized_demand": 13.0,
+      "realized_cost": 11.0,
+      "forecast_only_cost": 12.219844617998266
+    },
+    {
+      "sku": "FOODS_1_004",
+      "model": "seasonal_naive",
+      "stock": 179,
+      "realized_demand": 167.0,
+      "realized_cost": 12.0,
+      "forecast_only_cost": 495.0
+    },
+    {
+      "sku": "FOODS_1_004",
+      "model": "trailing_mean",
+      "stock": 206,
+      "realized_demand": 167.0,
+      "realized_cost": 39.0,
+      "forecast_only_cost": 360.00000000000006
+    },
+    {
+      "sku": "FOODS_1_004",
+      "model": "gradient_boosting",
+      "stock": 154,
+      "realized_demand": 167.0,
+      "realized_cost": 65.0,
+      "forecast_only_cost": 268.4276439356549
+    },
+    {
+      "sku": "FOODS_1_005",
+      "model": "seasonal_naive",
+      "stock": 34,
+      "realized_demand": 38.0,
+      "realized_cost": 20.0,
+      "forecast_only_cost": 170.0
+    },
+    {
+      "sku": "FOODS_1_005",
+      "model": "trailing_mean",
+      "stock": 65,
+      "realized_demand": 38.0,
+      "realized_cost": 27.0,
+      "forecast_only_cost": 4.0
+    },
+    {
+      "sku": "FOODS_1_005",
+      "model": "gradient_boosting",
+      "stock": 49,
+      "realized_demand": 38.0,
+      "realized_cost": 11.0,
+      "forecast_only_cost": 60.22820986270601
+    },
+    {
+      "sku": "FOODS_1_006",
+      "model": "seasonal_naive",
+      "stock": 115,
+      "realized_demand": 42.0,
+      "realized_cost": 73.0,
+      "forecast_only_cost": 42.0
+    },
+    {
+      "sku": "FOODS_1_006",
+      "model": "trailing_mean",
+      "stock": 82,
+      "realized_demand": 42.0,
+      "realized_cost": 40.0,
+      "forecast_only_cost": 16.999999999999986
+    },
+    {
+      "sku": "FOODS_1_006",
+      "model": "gradient_boosting",
+      "stock": 75,
+      "realized_demand": 42.0,
+      "realized_cost": 33.0,
+      "forecast_only_cost": 13.998172588966483
+    },
+    {
+      "sku": "FOODS_1_008",
+      "model": "seasonal_naive",
+      "stock": 10,
+      "realized_demand": 6.0,
+      "realized_cost": 4.0,
+      "forecast_only_cost": 30.0
+    },
+    {
+      "sku": "FOODS_1_008",
+      "model": "trailing_mean",
+      "stock": 12,
+      "realized_demand": 6.0,
+      "realized_cost": 6.0,
+      "forecast_only_cost": 0.0
+    },
+    {
+      "sku": "FOODS_1_008",
+      "model": "gradient_boosting",
+      "stock": 8,
+      "realized_demand": 6.0,
+      "realized_cost": 2.0,
+      "forecast_only_cost": 21.19660479226266
+    },
+    {
+      "sku": "FOODS_1_009",
+      "model": "seasonal_naive",
+      "stock": 77,
+      "realized_demand": 42.0,
+      "realized_cost": 35.0,
+      "forecast_only_cost": 50.0
+    },
+    {
+      "sku": "FOODS_1_009",
+      "model": "trailing_mean",
+      "stock": 82,
+      "realized_demand": 42.0,
+      "realized_cost": 40.0,
+      "forecast_only_cost": 25.000000000000036
+    },
+    {
+      "sku": "FOODS_1_009",
+      "model": "gradient_boosting",
+      "stock": 71,
+      "realized_demand": 42.0,
+      "realized_cost": 29.0,
+      "forecast_only_cost": 75.41257710104396
+    }
+  ]
+}

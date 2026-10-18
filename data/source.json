@@ -1,0 +1,6 @@
+{
+  "url": "https://raw.githubusercontent.com/Nixtla/transfer-learning-time-series/45e749a7e6a513dd843dbdf82181b1e27bbaf232/datasets/m5_sales_exog_small.csv",
+  "sha256": "c0d257cffbe17aa56863ba8a936b91abf5fc4c243a99d0861013139131833d21",
+  "rows": 15752,
+  "retrieved": "2026-10-18"
+}
