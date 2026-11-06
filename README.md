@@ -1,5 +1,7 @@
 # StockSense
 
+StockSense helps you explore how much inventory a retailer should order when future sales are uncertain. Use the dashboard to compare forecasts and see how different ordering choices affect the risk of running out or buying too much.
+
 [Methodology](docs/methodology.md) · [Decision memo](docs/decision-memo.md)
 
 **A demand forecast is useful when it improves a decision.** StockSense is a reproducible data-science project connecting retail forecasting, uncertainty and inventory economics—with a working interactive research dashboard.
